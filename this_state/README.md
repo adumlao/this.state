@@ -1,68 +1,100 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# this.state
 
-## Available Scripts
 
-In the project directory, you can run:
+## Project Description
 
-### `npm start`
+**this.state** is a site that gives the public access to real-time bills and legislation that congress just passed.  It will allow the user insight on how each party voted.  Upcoming bills will also be displayed, as well as a search functionality that will allow the user to search for bills according to a specific topic.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The site will have a directory of every senator and house member by state where a user can access a specific politician's contact information and website, and offer statistics on each of their voting records (including how many votes they've missed, their percentage of voting against party) and their spending habits.  Note that statistics are only available for congress members of the 115th congress and only reflect stats from year 2018- contact info will still be available for new members, but their statistics are not available yet.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Wireframes
 
-### `npm test`
+Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### MVP/PostMVP - 5min
 
-### `npm run build`
+### MVP
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Display CurrentBills  component in the homepage
+- NavMain bar with that routes to /Home, /BillsArchive, and /CongressHome
+- /BillsArchive route displays UpcomingBills component to be voted on
+- /BillsArchive route will contain a SearchBillsForm component, user types keyword to search.
+- BillResults component will be routed after user hits the search button
+- /CongressHome route will display PressReleases component
+- /CongressHome route will have a NavCongress bar that will route to /senate or /house
+- /senate and /house routes will have a similar hierarchy:
+  * a CongressStat component that renders the stats of the previous year, and an an OnClick function on the name of the politician that will lead to his ContactList component
+  * a FilterByStateForm component with a dropdown box where the user selects a specific state, a PoliticiansList component that shows all the politicians of each state, an OnClick function on the name of the politician that will lead to his ContactList
+- Header and Footer Components
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### PostMVP
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- a filter by party function
+- a filter by next re-election function
+- a search for a specific bill function (needs a bill ID)
+- a specific roll-call vote function (needs bill ID)
 
-### `npm run eject`
+## React Component Hierarchy
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Functional Components
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+| Component | Description |
+| --- | :---: |  
+| Header | This will render the header |
+| Footer | This will render the header|
+| NavMain| This will render the nav bar in the header with links to /home /billsarchive and /congresshome|
+| CurrentBills | A list of current bills passed and the votes outcome will render at the homepage |
+| UpcomingBills | Renders a list of upcoming bills immediately when routed to /BillsArchive |
+| SearchBillsForm | Renders a form for the user to type in a keyword |
+| BillResults | Renders a list of bills that have the keyword searched |
+| PressReleases | Renders a list of the most current press releases |
+| NavCongress | Renders links to /senate and /house |
+| CongressStat | Renders the stats of the previous year |
+| ContactList | Renders contact info (phone, site, socials) |
+| FilterByStateForm | Renders a dropdown box for the user to choose a state |
+| PoliticiansList | Renders a list of politicians by state |
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+| Component | Priority | Estimated Time | Time Invetsted | Actual Time |
+| --- | :---: |  :---: | :---: | :---: |
+| Working with API | H | 2hrs| hrs | hrs |
+| Header/Footer component | H | 1hr | hrs | hrs |
+| NavMain | 1H | hrs| hrs | hrs |
+| CurrentBills | 1H | hrs| hrs | hrs |
+| UpcomingBills | 1H | hrs| hrs | hrs |
+| SearchBillsForm | 1.5H | hrs| hrs | hrs |
+| BillResults | 1H | hrs| hrs | hrs |
+| PressReleases | 1H | hrs| hrs | hrs |
+| NavCongress | 1H | hrs| hrs | hrs |
+| CongressStat | 2.5H | hrs| hrs | hrs |
+| ContactList | 1H | hrs| hrs | hrs |
+| FilterByStateForm | 2H | hrs| hrs | hrs |
+| PoliticiansList | 2H | hrs| hrs | hrs |
+| Styling | 6H | hrs| hrs | hrs |
+| Total | H | hrs| hrs | hrs |
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Helper Functions
+Helper functions should be generic enought that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
 
-## Learn More
+| Function | Description |
+| --- | :---: |  
+| Capitalize | This will capitalize the first letter in a string of text |
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Additional Libraries
+ Use this section to list all supporting libraries and thier role in the project.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Code Snippet
 
-### Code Splitting
+Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+```
+function reverse(string) {
+	// here is the code to reverse a string of text
+}
+```
 
-### Analyzing the Bundle Size
+## Issues and Resolutions
+ Use this section to list of all major issues encountered and their resolution.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+#### SAMPLE.....
+**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
+**RESOLUTION**: Missing comma after first object in sources {} object
