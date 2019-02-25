@@ -1,0 +1,73 @@
+html {
+  text-align: center;
+
+}
+
+header {
+  background-color: black;
+  color: white;
+}
+
+h1{
+  font-size: 100px;
+  margin: 0px;
+  height: 300px;
+  line-height: 300px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: grey;
+  height: 50px;
+  line-height: 50px;
+}
+
+a{
+  color: white;
+}
+
+footer{
+  background-color: grey;
+  height: 75px;
+  line-height: 75px;
+}
+
+main {
+  background-color: white;
+
+}
+
+h2{
+  margin: 0px;
+  color: black;
+  margin: 50px;
+}
+
+.main{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.block{
+  margin: 30px;
+  width:400px;
+  border: 1px solid black;
+}
+
+.name{
+  font-size: 30px;
+
+}
+
+form{
+  margin: 25px;
+}
+
+input {
+  margin: 10px;
+}
+
+.presslink{
+  color: black;
+}
