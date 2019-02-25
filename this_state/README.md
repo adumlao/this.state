@@ -9,7 +9,7 @@ The site will have a directory of every senator and house member by state where 
 
 ## Wireframes
 
-### /Home (will show render recent bills passed):
+### /Home (will render recent bills passed):
 ![/Home](https://i.imgur.com/mPzyfzV.jpg "Home")
 
 
