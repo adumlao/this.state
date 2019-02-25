@@ -9,9 +9,42 @@ The site will have a directory of every senator and house member by state where 
 
 ## Wireframes
 
-Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe.
+### /Home (will show render recent bills passed):
+![/Home](https://i.imgur.com/mPzyfzV.jpg "Home")
 
-### MVP/PostMVP - 5min
+
+
+### /Bills (bills main page will render upcoming bills):
+![/Bills](https://i.imgur.com/SYrjX85.jpg "Bills Main")
+
+
+
+### /Bills/SearchResults (will display search results):
+![/Bills/SearchResults](https://i.imgur.com/pwWHrT7.jpg "Bills Search Results")
+
+
+
+### /Congress (congress main page will render recent press releases):
+![/Congress](https://i.imgur.com/VAiEOC6.jpg "Congress Main")
+
+
+
+### /Congress/Senate or /Congress/House (renders 2018 scorecard with a filter by state form):
+![/Congress/Senate or /Congress/House](https://i.imgur.com/I2II6xF.jpg "Senate/House Scorecard")
+
+
+
+### /Bills (shows expenses):
+![/Congress/Senate/Expenses/:name or /Congress/House/Expenses/:name](https://i.imgur.com/brrVT9A.jpg "Expenses")
+
+
+
+### /Congress/Senate/State or /Congress/House/State (shows politicans per state with a show more/less contact list button):
+![/Bills](https://i.imgur.com/rxA4fTC.jpg "StateList")
+
+
+
+## MVP/PostMVP
 
 ### MVP
 
@@ -35,6 +68,10 @@ Upload images of wireframe to cloudinary and add the link here with a descriptio
 - a specific roll-call vote function (needs bill ID)
 
 ## React Component Hierarchy
+
+![Component Hierarchy](https://i.imgur.com/SeIGH3C.jpg "Hierarchy")
+
+
 
 ## Functional Components
 
