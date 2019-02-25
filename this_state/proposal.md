@@ -7,21 +7,6 @@
 
 The site will have a directory of every senator and house member by state where a user can access a specific politician's contact information and website, and offer statistics on each of their voting records (including how many votes they've missed and their percentage of voting against party) and their spending habits.  Note that statistics are only available for congress members of the 115th congress and only reflect stats from year 2018- contact info will still be available for new members, but their statistics are not available yet.
 
-
-## Foreseeable Problems
-
-- The API lists members of the 115th Congress and i will have to filter through their list to show only members that are still in office.
-- Allowing the user to click on  a specific lawmaker and have that link route to a page that shows the politician's contact info and stats if they are available.
-- Some bills have no headlines/titles.
-- API has no pictures.
-
-## Possible solutions
-
-- there is an **in_office : true/false** property that i can use to filter through the array and have it only return those that are still in in_office
-- A show more/show less functionality which will be a simpler/less-sophisticated part one to solve the problem.  I can use ```<Link to='/:name' />``` to really highlight the politician.
-- Conditional rendering will show site logo/image in lieu of a title.
-- Style it up!
-
 ## API used:
 
 [https://projects.propublica.org/api-docs/congress-api/]
@@ -92,3 +77,17 @@ The site will have a directory of every senator and house member by state where 
 - a filter by next re-election function
 - a search for a specific bill function (needs a bill ID)
 - a specific roll-call vote function (needs bill ID)
+
+## Foreseeable Problems
+
+- The API lists members of the 115th Congress and i will have to filter through their list to show only members that are still in office.
+- Allowing the user to click on  a specific lawmaker and have that link route to a page that shows the politician's contact info and stats if they are available.
+- Some bills have no headlines/titles.
+- API has no pictures.
+
+## Possible solutions
+
+- there is an **in_office : true/false** property that i can use to filter through the array and have it only return those that are still in in_office
+- A show more/show less functionality which will be a simpler/less-sophisticated part one to solve the problem.  I can use ```<Link to='/:name' />``` to really highlight the politician.
+- Conditional rendering will show site logo/image in lieu of a title.
+- Style it up!
