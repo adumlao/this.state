@@ -145,39 +145,55 @@ class App extends Component {
          )}/>
 
          <Route path ="/Senate" render={() => (
-            <div>
-            <div className="forms">
-            <FilterSenatorByStateForm
-            submitState = {this.submitState}
-            handleChange = {this.handleChange}
-            value = {this.state.senatorByState}/>
-            <GetSpecificSenatorForm
-            submitSpecificSenator = {this.submitSpecificSenator}
-            handleChange = {this.handleChange}
-            value = {this.state.keyword} />
+            <div className="politician">
+
+            <div className="search-politician">
+              <div className="search-headers">Search Specific Legislator</div>
+              <DisplaySpecificMember names={this.state.specificSenator} />
+              <div className="forms">
+              <FilterSenatorByStateForm
+              submitState = {this.submitState}
+              handleChange = {this.handleChange}
+              value = {this.state.senatorByState}/>
+              <GetSpecificSenatorForm
+              submitSpecificSenator = {this.submitSpecificSenator}
+              handleChange = {this.handleChange}
+              value = {this.state.keyword} />
+              </div>
+              <DisplayByState className="display-by-state" names={this.state.senatorByState}/>
             </div>
-            <DisplaySpecificMember names={this.state.specificSenator} />
-            <DisplayByState names={this.state.senatorByState}/>
-            <Senate names={this.state.senator}/>
+
+            <div className="scorecard">
+              <Senate names={this.state.senator}/>
+            </div>
+
             </div>
          )}/>
 
          <Route path ="/House" render={() => (
-           <div>
-           <div className="forms">
-           <FilterHouseByStateForm
-           submitHouse = {this.submitHouse}
-           handleChange = {this.handleChange}
-           value = {this.state.houseRepByState}/>
-           <GetSpecificSenatorForm
-           submitSpecificSenator = {this.submitSpecificHouse}
-           handleChange = {this.handleChange}
-           value = {this.state.keyword} />
+           <div className="politician">
+
+           <div className="search-politician">
+            <div className="search-headers">Search Specific Legislator</div>
+            <DisplaySpecificMember names={this.state.specificHouse} />
+            <div className="forms">
+            <FilterHouseByStateForm
+            submitHouse = {this.submitHouse}
+            handleChange = {this.handleChange}
+            value = {this.state.houseRepByState}/>
+            <GetSpecificSenatorForm
+            submitSpecificSenator = {this.submitSpecificHouse}
+            handleChange = {this.handleChange}
+            value = {this.state.keyword} />
+            </div>
+            <DisplayByState className="display-by-state" names={this.state.houseRepByState}/>
            </div>
-           <DisplaySpecificMember names={this.state.specificHouse} />
-           <DisplayByState names={this.state.houseRepByState}/>
-           <House names={this.state.houseRep}/>
+
+           <div className="scorecard">
+            <House names={this.state.houseRep}/>
            </div>
+
+            </div>
          )}/>
 
          <Route path ="/PressRelease" render={() => (

@@ -4,7 +4,7 @@ import React from 'react';
 const GetSpecificSenatorForm = (props) => {
   return(
     <div>
-      <h2>Filter By ID</h2>
+      <div className="search-headers">Step 2: Filter By ID</div>
       <form>
         <input
           onChange={props.handleChange}

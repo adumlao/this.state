@@ -4,7 +4,7 @@ import React from 'react';
 const FilterSenatorByStateForm = (props) => {
   return(
     <div>
-      <h2>Filter By State</h2>
+      <div className="search-headers">Step 1: Filter By State</div>
       <form>
         <input
           onChange={props.handleChange}

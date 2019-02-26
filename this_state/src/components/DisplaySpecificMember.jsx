@@ -5,19 +5,27 @@ const DisplaySpecificMember = (props) => {
     <div className="main">
     {props.names.map(x=> (
       <div
-      className="block"
-      key={x.id}
-      style={{ backgroundColor: x.current_party==="R" ? "red" : "blue" }}>
-        <div className="name">{x.last_name}, {x.first_name}</div>
-        <div>{x.current_party}</div>
-        <div>phone: {x.roles[0].phone}</div>
-        <div>twitter: {x.twitter_account}</div>
-        <div>facebook: {x.facebook_account}</div>
-        <div>website: {x.url}</div>
-        {x.roles[0].contact_form === null ? null : (<div>email: {x.roles[0].contact_form}</div>)}
-        <div>2019 Scorecard:</div>
-        <div>Missed Votes: {x.roles[0].missed_votes_pct}</div>
-        <div>Votes with party percentage: {x.roles[0].votes_with_party_pct}</div>
+      className="specific-block"
+      key={x.id}>
+        <div className="state-search">
+          <div>{x.last_name}, {x.first_name}</div>
+          <div className="partybox-search"
+          style={{ backgroundColor: x.party==="R" ? "#ee252c" : "#123cf4" }} />
+          <div>{x.current_party}</div>
+        </div>
+        <div className="contact">
+          <div>phone: <span>{x.roles[0].phone}</span></div>
+          <div>twitter: <span>{x.twitter_account}</span></div>
+          <div>facebook: <span>{x.facebook_account}</span></div>
+          <div>website: <span>{x.url}</span></div>
+          {x.roles[0].contact_form === null ? null : (<div>email: <span>{x.roles[0].contact_form}</span></div>)}
+        </div>
+        <div className="stats">
+          <div>2019 Scorecard</div>
+          <div>Missed Votes Percentage:</div>
+          <strong>{x.roles[0].missed_votes_pct}</strong>
+          <div>Votes with party percentage:</div> <strong>{x.roles[0].votes_with_party_pct}</strong>
+        </div>
       </div>
     ))}
     </div>

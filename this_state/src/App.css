@@ -58,7 +58,6 @@ h2{
   color: white;
   font-weight: 100;
   font-size: 50px;
-  margin: 0px;
   margin: 50px 50px 20px 50px;
   font-family: 'Alfa Slab One', cursive;
   text-transform: uppercase;
@@ -83,7 +82,11 @@ h2{
 }
 
 .name{
-  font-size: 30px;
+  text-decoration: underline;
+  font-weight: bolder;
+  text-transform: uppercase;
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
 }
 
 .headline{
@@ -111,9 +114,89 @@ h2{
 
 }
 
-.forms{
+.presslink:hover{
+  text-decoration: none;
+  color: blue;
+}
+
+.presslink{
+  text-decoration: underline;
+  text-transform: uppercase;
+  font-weight: bolder;
+  color: black;
+}
+
+.partybox{
+  border: 1px solid black;
+  height: 50px;
+  width: 50px;
+}
+
+.bio{
+  margin-top: 20px;
+  text-align: right;
+  font-family: 'Roboto', sans-serif;
+}
+
+.bio-state{
+  font-size: 25px;
+}
+
+.politician {
+  display: grid;
+  grid-template-columns: 25% 75%;
+}
+
+.politician-block{
+  justify-content: space-between;
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  text-align: left;
+  padding: 15px 20px;
+  margin: 30px 15px 0px 15px;
+  border: 1px solid black;
+  width:  280px;
+}
+
+.search-politician{
+  margin: 75px 15px ;
+  display: flex;
+  flex-direction: column;
+}
+
+.state-search{
+  text-decoration: underline;
+  font-weight: bolder;
+  text-transform: uppercase;
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+}
+
+.display-by-state{
+  display: flex;
+  flex-direction: column;
+}
+
+.partybox-search{
+  border: 1px solid black;
+  height: 25px;
+  width: 25px;
+}
+
+.search-headers{
+  background: black;
+  color: white;
+  font-weight: 100;
+  font-size: 20px;
+  font-family: 'Alfa Slab One', cursive;
+  text-transform: uppercase;
+
+}
+
+.forms{
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
 }
 
 form{
@@ -124,18 +207,50 @@ input {
   margin: 10px;
 }
 
-.presslink:hover{
-  text-decoration: underline;
-  color: black;
-}
-
-.presslink{
-  text-transform: uppercase;
-  font-weight: bolder;
-  color: black;
-}
 
 .id{
   cursor: copy;
   color: black;
+}
+
+.id:hover{
+  text-decoration: underline;
+  color:blue;
+}
+
+.specific-block{
+  text-align: left;
+  padding: 15px 20px;
+  margin: 30px 5px 30px 0px;
+  border: 1px solid black;
+  width: 285px;
+}
+
+.contact{
+  margin-top: 15px;
+  text-transform: uppercase;
+  text-align: right;
+  font-family: 'Roboto', sans-serif;
+  word-wrap: break-word;
+}
+
+.stats{
+  font-size: 18px;
+  margin-top: 30px;
+  text-transform: uppercase;
+}
+
+span:hover{
+  cursor: copy;
+  color: blue;
+}
+
+span{
+  text-decoration: underline;
+  text-transform: lowercase;
+  font-weight: bolder;
+}
+
+strong{
+  font-size: 30px;
 }
