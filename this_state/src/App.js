@@ -157,8 +157,7 @@ class App extends Component {
             value = {this.state.keyword} />
             </div>
             <DisplaySpecificMember names={this.state.specificSenator} />
-            <DisplayByState
-            names={this.state.senatorByState}/>
+            <DisplayByState names={this.state.senatorByState}/>
             <Senate names={this.state.senator}/>
             </div>
          )}/>
@@ -173,8 +172,7 @@ class App extends Component {
            <GetSpecificSenatorForm
            submitSpecificSenator = {this.submitSpecificHouse}
            handleChange = {this.handleChange}
-           value = {this.state.keyword}
-           />
+           value = {this.state.keyword} />
            </div>
            <DisplaySpecificMember names={this.state.specificHouse} />
            <DisplayByState names={this.state.houseRepByState}/>

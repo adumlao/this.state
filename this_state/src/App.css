@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Alfa+Slab+One|Anton|Cinzel|Fjalla+One|Playfair+Display|Roboto');
+
+
 html {
   text-align: center;
 
@@ -13,6 +16,9 @@ h1{
   margin: 0px;
   height: 300px;
   line-height: 300px;
+  font-family: 'Alfa Slab One', cursive;
+  text-transform: uppercase;
+  text-decoration: underline;
 }
 
 nav {
@@ -21,9 +27,16 @@ nav {
   background-color: grey;
   height: 50px;
   line-height: 50px;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
 }
 
 a{
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
   color: white;
 }
 
@@ -31,6 +44,8 @@ footer{
   background-color: grey;
   height: 75px;
   line-height: 75px;
+  margin-top: 30px;
+  font-family: 'Roboto', sans-serif;
 }
 
 main {
@@ -39,9 +54,14 @@ main {
 }
 
 h2{
+  background: black;
+  color: white;
+  font-weight: 100;
+  font-size: 50px;
   margin: 0px;
-  color: black;
-  margin: 50px;
+  margin: 50px 50px 20px 50px;
+  font-family: 'Alfa Slab One', cursive;
+  text-transform: uppercase;
 }
 
 .main{
@@ -49,14 +69,45 @@ h2{
   grid-template-columns: 1fr 1fr 1fr;
 }
 
+.reps{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 .block{
-  margin: 30px;
-  width:400px;
+  text-align: left;
+  padding: 15px 20px;
+  margin: 30px 15px 0px 15px;
+  width: 400px;
   border: 1px solid black;
 }
 
 .name{
   font-size: 30px;
+}
+
+.headline{
+  font-size: 23px;
+  text-align: justify;
+  font-family: 'Alfa Slab One', cursive;
+  text-decoration: underline;
+
+}
+
+.details {
+  text-align: right;
+  margin-top: 15px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.tally{
+  text-align: left;
+
+}
+
+.bill-description{
+  font-weight: bolder;
+  margin: 15px 0px;
 
 }
 
@@ -73,6 +124,18 @@ input {
   margin: 10px;
 }
 
+.presslink:hover{
+  text-decoration: underline;
+  color: black;
+}
+
 .presslink{
+  text-transform: uppercase;
+  font-weight: bolder;
+  color: black;
+}
+
+.id{
+  cursor: copy;
   color: black;
 }

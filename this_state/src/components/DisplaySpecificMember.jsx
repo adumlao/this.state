@@ -4,7 +4,10 @@ const DisplaySpecificMember = (props) => {
   return(
     <div className="main">
     {props.names.map(x=> (
-      <div className="block" key={x.id}>
+      <div
+      className="block"
+      key={x.id}
+      style={{ backgroundColor: x.current_party==="R" ? "red" : "blue" }}>
         <div className="name">{x.last_name}, {x.first_name}</div>
         <div>{x.current_party}</div>
         <div>phone: {x.roles[0].phone}</div>

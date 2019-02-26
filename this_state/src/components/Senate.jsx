@@ -4,9 +4,12 @@ const Senate = (props) => {
     return(
       <div>
       <h2>2018 Senate Scorecard</h2>
-      <div className="main">
+      <div className="reps">
       {props.names.map(x=> (
-        <div className="block" key={x.id}>
+        <div
+        className="block"
+        key={x.id}
+        style={{ backgroundColor: x.party==="R" ? "red" : "blue" }}>
           <div className="name">{x.last_name}, {x.first_name}</div>
           <div>{x.state}, {x.party}</div>
           <div>Missed Votes: {x.missed_votes} / Total: {x.total_votes}</div>
