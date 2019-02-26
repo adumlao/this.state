@@ -11,8 +11,8 @@ const DisplaySpecificMember = (props) => {
         <div>twitter: {x.twitter_account}</div>
         <div>facebook: {x.facebook_account}</div>
         <div>website: {x.url}</div>
-        <div>email: {x.roles[0].contact_form}</div>
-        <div>2019 Stats:</div>
+        {x.roles[0].contact_form === null ? null : (<div>email: {x.roles[0].contact_form}</div>)}
+        <div>2019 Scorecard:</div>
         <div>Missed Votes: {x.roles[0].missed_votes_pct}</div>
         <div>Votes with party percentage: {x.roles[0].votes_with_party_pct}</div>
       </div>

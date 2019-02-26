@@ -10,7 +10,7 @@ const FilterSenatorByStateForm = (props) => {
           onChange={props.handleChange}
           type="text"
           name="location"
-          placeholder="State"
+          placeholder="Enter State (Ex: NY)"
           value={props.location}
         />
         <input
@@ -21,8 +21,6 @@ const FilterSenatorByStateForm = (props) => {
       </form>
     </div>
   )
-
-
 }
 
 export default FilterSenatorByStateForm;

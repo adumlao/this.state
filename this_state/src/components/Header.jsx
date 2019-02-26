@@ -6,7 +6,6 @@ const Header = () => {
       <h1>this.state</h1>
     </div>
   )
-
 }
 
 export default Header;

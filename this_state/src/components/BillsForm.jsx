@@ -18,8 +18,6 @@ const BillsForm = (props) => {
       />
     </form>
   )
-
-
 }
 
 export default BillsForm;

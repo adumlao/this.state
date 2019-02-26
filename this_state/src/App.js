@@ -124,12 +124,15 @@ class App extends Component {
           <Header />
           <Nav />
         </header>
+
         <main>
+
          <Route exact path="/" render={() => (
            <div>
             <Home votes={this.state.votes} />
             </div>
          )} />
+
          <Route path ="/BillsArchive" render={() => (
            <div>
             <Bills />
@@ -140,6 +143,7 @@ class App extends Component {
             <BillSearchResults keyword={this.state.keyword} />
            </div>
          )}/>
+
          <Route path ="/Senate" render={() => (
             <div>
             <div className="forms">
@@ -153,10 +157,12 @@ class App extends Component {
             value = {this.state.keyword} />
             </div>
             <DisplaySpecificMember names={this.state.specificSenator} />
-            <DisplayByState names={this.state.senatorByState}/>
+            <DisplayByState
+            names={this.state.senatorByState}/>
             <Senate names={this.state.senator}/>
             </div>
          )}/>
+
          <Route path ="/House" render={() => (
            <div>
            <div className="forms">
@@ -167,19 +173,23 @@ class App extends Component {
            <GetSpecificSenatorForm
            submitSpecificSenator = {this.submitSpecificHouse}
            handleChange = {this.handleChange}
-           value = {this.state.keyword} />
+           value = {this.state.keyword}
+           />
            </div>
            <DisplaySpecificMember names={this.state.specificHouse} />
            <DisplayByState names={this.state.houseRepByState}/>
            <House names={this.state.houseRep}/>
            </div>
          )}/>
+
          <Route path ="/PressRelease" render={() => (
            <div>
            <PressRelease press={this.state.press}/>
            </div>
          )}/>
+
         </main>
+
         <Footer />
       </div>
     );

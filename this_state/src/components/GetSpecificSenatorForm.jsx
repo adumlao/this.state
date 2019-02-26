@@ -10,7 +10,7 @@ const GetSpecificSenatorForm = (props) => {
           onChange={props.handleChange}
           type="text"
           name="location"
-          placeholder="State"
+          placeholder="Enter ID (Ex: G000555)"
           value={props.location}
         />
         <input
@@ -21,8 +21,6 @@ const GetSpecificSenatorForm = (props) => {
       </form>
     </div>
   )
-
-
 }
 
 export default GetSpecificSenatorForm;
