@@ -47,7 +47,14 @@ const fetchHouseRepbyState = async (state) => {
   return resp.data.results;
 }
 
+const fetchSpecificMember = async (id) => {
+  const resp = await api(`members/${id}.json`)
+  return resp.data.results;
+
+}
+
 export{
+  fetchSpecificMember,
   fetchHouseRepbyState,
   fetchSenatorbyState,
   pressRelease,

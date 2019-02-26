@@ -13,14 +13,18 @@ import PressRelease from './components/PressRelease'
 import DisplayByState from './components/DisplayByState'
 import FilterSenatorByStateForm from './components/FilterSenatorByStateForm'
 import FilterHouseByStateForm from './components/FilterHouseByStateForm'
+import GetSpecificSenatorForm from './components/GetSpecificSenatorForm'
+import DisplaySpecificMember from './components/DisplaySpecificMember'
 
-import { fetchHouseRepbyState,
-         fetchSenatorbyState,
-         pressRelease,
-         fetchVote,
-         fetchBill,
-         fetchSenator,
-         fetchHouseRep } from './services/api-helpers'
+import {
+  fetchSpecificMember,
+  fetchHouseRepbyState,
+  fetchSenatorbyState,
+  pressRelease,
+  fetchVote,
+  fetchBill,
+  fetchSenator,
+  fetchHouseRep } from './services/api-helpers'
 
 import './App.css';
 
@@ -38,12 +42,16 @@ class App extends Component {
       houseRep: [],
       press: [],
       senatorByState: [],
-      houseRepByState: []
+      houseRepByState: [],
+      specificSenator: [],
+      specificHouse: []
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.submitState = this.submitState.bind(this);
     this.submitHouse = this.submitHouse.bind(this);
+    this.submitSpecificSenator = this.submitSpecificSenator.bind(this);
+    this.submitSpecificHouse = this.submitSpecificHouse.bind(this);
   }
 
   handleChange(event) {
@@ -91,6 +99,24 @@ class App extends Component {
     })
   }
 
+  async submitSpecificSenator(ev){
+    ev.preventDefault();
+    const specificSenator = await fetchSpecificMember(this.state.value)
+
+    this.setState({
+      specificSenator: specificSenator
+    })
+  }
+
+  async submitSpecificHouse(ev){
+    ev.preventDefault();
+    const specificHouse = await fetchSpecificMember(this.state.value)
+
+    this.setState({
+      specificHouse: specificHouse
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -116,20 +142,34 @@ class App extends Component {
          )}/>
          <Route path ="/Senate" render={() => (
             <div>
+            <div className="forms">
             <FilterSenatorByStateForm
             submitState = {this.submitState}
             handleChange = {this.handleChange}
             value = {this.state.senatorByState}/>
+            <GetSpecificSenatorForm
+            submitSpecificSenator = {this.submitSpecificSenator}
+            handleChange = {this.handleChange}
+            value = {this.state.keyword} />
+            </div>
+            <DisplaySpecificMember names={this.state.specificSenator} />
             <DisplayByState names={this.state.senatorByState}/>
             <Senate names={this.state.senator}/>
             </div>
          )}/>
          <Route path ="/House" render={() => (
            <div>
+           <div className="forms">
            <FilterHouseByStateForm
            submitHouse = {this.submitHouse}
            handleChange = {this.handleChange}
            value = {this.state.houseRepByState}/>
+           <GetSpecificSenatorForm
+           submitSpecificSenator = {this.submitSpecificHouse}
+           handleChange = {this.handleChange}
+           value = {this.state.keyword} />
+           </div>
+           <DisplaySpecificMember names={this.state.specificHouse} />
            <DisplayByState names={this.state.houseRepByState}/>
            <House names={this.state.houseRep}/>
            </div>
