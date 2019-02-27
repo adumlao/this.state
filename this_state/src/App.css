@@ -160,8 +160,8 @@ h2{
 }
 
 .politician {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 25% 75%;
 }
 
 .politician-block{
@@ -176,7 +176,7 @@ h2{
 }
 
 .search-politician{
-  width: 340px;
+  /* width: 340px; */
   position: sticky;
   top: 5px;
   height: 0;
@@ -205,7 +205,7 @@ h2{
 }
 
 .search-headers{
-  border: 5px solid white;
+  border: 1px solid white;
   background: black;
   color: white;
   font-weight: 100;
@@ -239,7 +239,7 @@ input {
 .specific-block{
   text-align: left;
   padding: 15px 20px;
-  margin: 5px 0px 10px 10px;
+  margin: 5px 0px 10px 5px;
   border: 1px solid black;
   width: 285px;
 }
@@ -297,8 +297,8 @@ strong{
 
   h1{
     font-size: 30px;
-    height: 100px;
-    line-height: 100px;
+    height: 150px;
+    line-height: 150px;
   }
 
   nav{
@@ -308,22 +308,24 @@ strong{
   }
 
   a {
-    color: white;
+    color: black;
   }
 
   h2{
-    margin: 10px 20px;
+    margin: 10px 35px;
     padding: 5px;
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .block{
     width: 80%;
-    margin: 0px 15px 10px 15px;
+    margin: 5px 15px 10px 15px;
+    padding: 5px;
   }
 
-  .headline {
+  .headline, .press-name, .release, .press-date {
     font-size: 17px;
+    margin: 2px;
   }
 
   .details{
@@ -341,6 +343,91 @@ strong{
     font-size: 8px;
   }
 
+  .politician {
+    display: grid;
+    grid-template-columns: 30% 70%;
+  }
 
+  .reps{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px 0px 5px 0px;
+  }
+
+  .politician-block{
+    width: 40%;
+    margin: 0px 5px 5px 5px;
+    padding: 2px;
+  }
+
+  .name, .state-search{
+    font-size: 12px;
+  }
+
+  .partybox, .partybox-search {
+    height: 15px;
+    width: 15px;
+  }
+
+  .bio{
+    font-size: 8px;
+    margin-top: 5px;
+  }
+
+  .bio-state {
+    font-size: 8px;
+  }
+
+  .search-headers{
+    font-size: 8px;
+  }
+
+  .search-politician {
+    position: sticky;
+    top: 5px;
+    height: 0;
+    margin: 30px -5px 5px 15px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  input{
+    font-size: 8px;
+    border: 1px solid black;
+    margin: 2px;
+  }
+
+  .block-header {
+    margin-bottom: 0px;
+    font-size: 8px;
+  }
+
+  .specific-block{
+    text-align: left;
+    padding: 2px;
+    margin: 5px;
+    border: 1px solid black;
+    width: 100%;
+  }
+
+  .contact, .stats{
+    font-size: 10px;
+    margin-top: 5px;
+  }
+
+  strong {
+    font-size: 10px;
+  }
+
+  .presslink{
+    font-size: 8px;
+  }
 
 }

@@ -11,8 +11,10 @@ const PressRelease = (props) => {
           <div>From the office of:</div>
           <div>{x.name}</div>
           </div>
+          <div className="press-date">
           <div>{x.chamber}, {x.state}, {x.party}</div>
           <div>Last Updated: {x.updated_at}</div>
+          </div>
           <div className="release">{x.title}</div>
           <a className="presslink" href={x.url} target="_blank" rel="noopener noreferrer">Read More</a>
         </div>
