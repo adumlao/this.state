@@ -148,7 +148,7 @@ class App extends Component {
             <div className="politician">
 
             <div className="search-politician">
-              <div className="search-headers">Search Specific Legislator</div>
+              <div className="search-headers">Search Current Legislator</div>
               <DisplaySpecificMember names={this.state.specificSenator} />
               <div className="forms">
               <FilterSenatorByStateForm
@@ -174,7 +174,7 @@ class App extends Component {
            <div className="politician">
 
            <div className="search-politician">
-            <div className="search-headers">Search Specific Legislator</div>
+            <div className="search-headers">Search Current Legislator</div>
             <DisplaySpecificMember names={this.state.specificHouse} />
             <div className="forms">
             <FilterHouseByStateForm

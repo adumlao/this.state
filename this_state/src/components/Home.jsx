@@ -13,6 +13,7 @@ const DisplayVotes = (props) => {
           <div className="details">
             <div>Bill ID: {x.bill.bill_id}</div>
             <div>Chamber: {x.chamber}</div>
+            <div>Sponsor ID: <span>{x.bill.sponsor_id}</span></div>
             <div>Result: {x.result}</div>
             <div>Latest Action: {x.bill.latest_action}</div>
             <div>On: {x.date}</div>

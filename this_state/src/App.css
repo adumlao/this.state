@@ -40,6 +40,10 @@ a:hover {
   color: white;
 }
 
+.links:hover{
+  color: blue;
+}
+
 footer{
   background-color: grey;
   height: 75px;
@@ -184,6 +188,7 @@ h2{
 }
 
 .search-headers{
+  border: 5px solid white;
   background: black;
   color: white;
   font-weight: 100;

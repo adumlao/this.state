@@ -10,14 +10,14 @@ const DisplaySpecificMember = (props) => {
         <div className="state-search">
           <div>{x.last_name}, {x.first_name}</div>
           <div className="partybox-search"
-          style={{ backgroundColor: x.party==="R" ? "#ee252c" : "#123cf4" }} />
+          style={{ backgroundColor: x.current_party==="R" ? "#ee252c" : "#123cf4" }} />
           <div>{x.current_party}</div>
         </div>
         <div className="contact">
           <div>phone: <span>{x.roles[0].phone}</span></div>
           <div>twitter: <span>{x.twitter_account}</span></div>
           <div>facebook: <span>{x.facebook_account}</span></div>
-          <div>website: <span>{x.url}</span></div>
+          <div>website: <span><a className="links" href={x.url} target="_blank" rel="noopener noreferrer">{x.url}</a></span></div>
           {x.roles[0].contact_form === null ? null : (<div>email: <span>{x.roles[0].contact_form}</span></div>)}
         </div>
         <div className="stats">
