@@ -11,14 +11,18 @@ const DisplaySpecificMember = (props) => {
           <div>{x.last_name}, {x.first_name}</div>
           <div className="partybox-search"
           style={{ backgroundColor: x.current_party==="R" ? "#ee252c" : "#123cf4" }} />
-          <div>{x.current_party}</div>
         </div>
         <div className="contact">
-          <div>phone: <span>{x.roles[0].phone}</span></div>
-          <div>twitter: <span>{x.twitter_account}</span></div>
-          <div>facebook: <span>{x.facebook_account}</span></div>
-          <div>website: <span><a className="links" href={x.url} target="_blank" rel="noopener noreferrer">{x.url}</a></span></div>
-          {x.roles[0].contact_form === null ? null : (<div>email: <span>{x.roles[0].contact_form}</span></div>)}
+          {x.roles[0].phone === null ? null :
+            (<div>phone: <span>{x.roles[0].phone}</span></div>)}
+          {x.twitter_account === null ? null :
+            (<div>twitter: <span><a className="links" href={"https://twitter.com/"+x.twitter_account} target="_blank" rel="noopener noreferrer">{x.twitter_account}</a></span></div>)}
+          {x.facebook_account === null ? null :
+            (<div>facebook: <span><a className="links" href={"https://facebook.com/"+x.facebook_account} target="_blank" rel="noopener noreferrer">{x.facebook_account}</a></span></div>)}
+          {x.url === null ? null :
+            (<div>website: <span><a className="links" href={x.url} target="_blank" rel="noopener noreferrer">{x.url}</a></span></div>)}
+          {x.roles[0].contact_form === null ? null :
+            (<div>contact: <span><a className="links" href={x.roles[0].contact_form} target="_blank" rel="noopener noreferrer">{x.roles[0].contact_form}</a></span></div>)}
         </div>
         <div className="stats">
           <div>2019 Scorecard</div>

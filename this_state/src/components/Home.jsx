@@ -11,7 +11,7 @@ const DisplayVotes = (props) => {
         (<div className="block" key={x.id}>
           <div className="headline">{x.bill.title}</div>
           <div className="details">
-            <div>Bill ID: {x.bill.bill_id}</div>
+            <div>Bill ID: <span>{x.bill.bill_id}</span></div>
             <div>Chamber: {x.chamber}</div>
             <div>Sponsor ID: <span>{x.bill.sponsor_id}</span></div>
             <div>Result: {x.result}</div>

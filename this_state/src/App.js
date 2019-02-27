@@ -149,7 +149,6 @@ class App extends Component {
 
             <div className="search-politician">
               <div className="search-headers">Search Current Legislator</div>
-              <DisplaySpecificMember names={this.state.specificSenator} />
               <div className="forms">
               <FilterSenatorByStateForm
               submitState = {this.submitState}
@@ -159,11 +158,12 @@ class App extends Component {
               submitSpecificSenator = {this.submitSpecificSenator}
               handleChange = {this.handleChange}
               value = {this.state.keyword} />
+              <DisplaySpecificMember names={this.state.specificSenator} />
               </div>
-              <DisplayByState className="display-by-state" names={this.state.senatorByState}/>
             </div>
 
             <div className="scorecard">
+              <DisplayByState className="display-by-state" names={this.state.senatorByState}/>
               <Senate names={this.state.senator}/>
             </div>
 
@@ -175,7 +175,6 @@ class App extends Component {
 
            <div className="search-politician">
             <div className="search-headers">Search Current Legislator</div>
-            <DisplaySpecificMember names={this.state.specificHouse} />
             <div className="forms">
             <FilterHouseByStateForm
             submitHouse = {this.submitHouse}
@@ -185,11 +184,12 @@ class App extends Component {
             submitSpecificSenator = {this.submitSpecificHouse}
             handleChange = {this.handleChange}
             value = {this.state.keyword} />
+            <DisplaySpecificMember names={this.state.specificHouse} />
             </div>
-            <DisplayByState className="display-by-state" names={this.state.houseRepByState}/>
            </div>
 
            <div className="scorecard">
+            <DisplayByState className="display-by-state" names={this.state.houseRepByState}/>
             <House names={this.state.houseRep}/>
            </div>
 

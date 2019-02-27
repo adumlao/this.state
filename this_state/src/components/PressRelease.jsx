@@ -7,10 +7,13 @@ const PressRelease = (props) => {
     <div className="main">
       {props.press.map(x=> (
         <div className="block" key={x.id}>
-          <div className="name">{x.name}</div>
+          <div className="press-name">
+          <div>From the office of:</div>
+          <div>{x.name}</div>
+          </div>
           <div>{x.chamber}, {x.state}, {x.party}</div>
           <div>Last Updated: {x.updated_at}</div>
-          <div>{x.title}</div>
+          <div className="release">{x.title}</div>
           <a className="presslink" href={x.url} target="_blank" rel="noopener noreferrer">Read More</a>
         </div>
       ))}

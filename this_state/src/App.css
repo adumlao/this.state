@@ -143,12 +143,25 @@ h2{
 }
 
 .bio-state{
+  font-weight: bolder;
   font-size: 25px;
 }
 
+.block-header{
+  text-align: center;
+  margin-bottom: 15px;
+  background: black;
+  color: white;
+  font-weight: 100;
+  font-size: 20px;
+  font-family: 'Alfa Slab One', cursive;
+  text-transform: uppercase;
+
+}
+
 .politician {
-  display: grid;
-  grid-template-columns: 25% 75%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .politician-block{
@@ -163,6 +176,10 @@ h2{
 }
 
 .search-politician{
+  width: 340px;
+  position: sticky;
+  top: 5px;
+  height: 0;
   margin: 75px 15px ;
   display: flex;
   flex-direction: column;
@@ -177,8 +194,8 @@ h2{
 }
 
 .display-by-state{
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .partybox-search{
@@ -199,13 +216,8 @@ h2{
 }
 
 .forms{
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
-}
-
-form{
-  margin: 25px;
 }
 
 input {
@@ -216,6 +228,7 @@ input {
 .id{
   cursor: copy;
   color: black;
+  font-weight: bolder;
 }
 
 .id:hover{
@@ -226,12 +239,13 @@ input {
 .specific-block{
   text-align: left;
   padding: 15px 20px;
-  margin: 30px 5px 30px 0px;
+  margin: 5px 0px 10px 10px;
   border: 1px solid black;
   width: 285px;
 }
 
 .contact{
+  font-size: 15px;
   margin-top: 15px;
   text-transform: uppercase;
   text-align: right;
@@ -240,7 +254,7 @@ input {
 }
 
 .stats{
-  font-size: 18px;
+  font-size: 15px;
   margin-top: 30px;
   text-transform: uppercase;
 }
@@ -257,5 +271,76 @@ span{
 }
 
 strong{
-  font-size: 30px;
+  font-size: 20px;
+}
+
+.press-name{
+  font-size: 50px;
+  font-family: 'Alfa Slab One', cursive;
+  text-decoration: underline;
+}
+
+.release{
+  margin: 15px 0px;
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+}
+
+
+@media only screen and (max-width: 700px) {
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1{
+    font-size: 30px;
+    height: 100px;
+    line-height: 100px;
+  }
+
+  nav{
+    font-size: 9px;
+    height: 25px;
+    line-height: 25px;
+  }
+
+  a {
+    color: white;
+  }
+
+  h2{
+    margin: 10px 20px;
+    padding: 5px;
+    font-size: 18px;
+  }
+
+  .block{
+    width: 80%;
+    margin: 0px 15px 10px 15px;
+  }
+
+  .headline {
+    font-size: 17px;
+  }
+
+  .details{
+    font-size: 14px;
+  }
+
+  .tally{
+    font-size: 14px;
+  }
+
+  footer{
+    height: 30px;
+    line-height: 30px;
+    margin-top: 0px;
+    font-size: 8px;
+  }
+
+
+
 }

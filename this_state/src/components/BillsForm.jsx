@@ -8,7 +8,7 @@ const BillsForm = (props) => {
       onChange={props.handleChange}
       type="text"
       name="keyword"
-      placeholder="enter keyword"
+      placeholder="Enter Keyword"
       value={props.keyword}
     />
     <input
