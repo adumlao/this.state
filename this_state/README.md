@@ -142,7 +142,8 @@ style={{ backgroundColor: x.party==="R" ? "#ee252c" : "#123cf4" }} />
 **ERROR**: button click on representative id triggers an api call but does not recognize the value of the ID.                     
 **RESOLUTION**: pass props back to the parent using the spread operator and link the value to the target event.
 
-```   async submitSpecificSenator(ev){
+```   
+      async submitSpecificSenator(ev){
       ev.preventDefault();
       const specificSenator = await fetchSpecificMember(ev.target.value)
 
@@ -153,4 +154,5 @@ style={{ backgroundColor: x.party==="R" ? "#ee252c" : "#123cf4" }} />
 
     <DisplayByState {...props}
     submitSpecificSenator = {this.submitSpecificHouse}
-    value={props.id}/>```
+    value={props.id}/>
+    ```
