@@ -5,9 +5,13 @@
 
 ## Project Description
 
-**this.state** is a site that gives the public access to real-time bills and legislation that congress just passed.  It will allow the user insight on how each party voted.  Upcoming bills will also be displayed, as well as a search functionality that will allow the user to search for bills according to a specific topic.
+**this.state** is a site that gives the public access to real-time bills and legislation that congress just passed.  It will allow the user insight on how each party voted.
 
-The site will have a directory of every senator and house member by state where a user can access a specific politician's contact information and website, and offer statistics on each of their voting records (including how many votes they've missed, their percentage of voting against party) and their spending habits.  Note that statistics are only available for congress members of the 115th congress and only reflect stats from year 2018- contact info will still be available for new members, but their statistics are not available yet.
+The site will have a directory of every senator and house member, and offer statistics on each of their voting records (including how many votes they've missed, their percentage of voting against party).
+
+## User Stories
+
+The user will be able to search for a specific bill in the bills archive.  They will also be able to search for a specific politician by state or by id.  A button functionality is also available so that when the user clicks on a button containing the politician id, that person's contact information and stats will be displayed.
 
 ## Wireframes
 
