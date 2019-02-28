@@ -52,6 +52,8 @@ class App extends Component {
     this.submitHouse = this.submitHouse.bind(this);
     this.submitSpecificSenator = this.submitSpecificSenator.bind(this);
     this.submitSpecificHouse = this.submitSpecificHouse.bind(this);
+    this.submitId = this.submitId.bind(this);
+    this.submitHouseId = this.submitHouseId.bind(this);
   }
 
   handleChange(event) {
@@ -117,6 +119,24 @@ class App extends Component {
     });
   }
 
+  async submitId(ev){
+    ev.preventDefault();
+    const specificSenator = await fetchSpecificMember(this.state.value)
+
+    this.setState({
+      specificSenator: specificSenator
+    });
+  }
+
+  async submitHouseId(ev){
+    ev.preventDefault();
+    const specificHouse = await fetchSpecificMember(this.state.value)
+
+    this.setState({
+      specificHouse: specificHouse
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -155,7 +175,7 @@ class App extends Component {
               handleChange = {this.handleChange}
               value = {this.state.senatorByState}/>
               <GetSpecificSenatorForm
-              submitSpecificSenator = {this.submitSpecificSenator}
+              submitSpecificSenator = {this.submitId}
               handleChange = {this.handleChange}
               value = {this.state.keyword} />
               <DisplaySpecificMember names={this.state.specificSenator} />
@@ -188,7 +208,7 @@ class App extends Component {
             handleChange = {this.handleChange}
             value = {this.state.houseRepByState}/>
             <GetSpecificSenatorForm
-            submitSpecificSenator = {this.submitSpecificHouse}
+            submitSpecificSenator = {this.submitHouseId}
             handleChange = {this.handleChange}
             value = {this.state.keyword} />
             <DisplaySpecificMember names={this.state.specificHouse} />
