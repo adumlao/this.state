@@ -1,4 +1,4 @@
-# this.state
+# ![This.State](http://this.state.surge.sh/)
 
 
 ## Project Description
@@ -50,15 +50,13 @@ The site will have a directory of every senator and house member by state where 
 
 - Display CurrentBills  component in the homepage
 - NavMain bar with that routes to /Home, /BillsArchive, and /CongressHome
-- /BillsArchive route displays UpcomingBills component to be voted on
 - /BillsArchive route will contain a SearchBillsForm component, user types keyword to search.
 - BillResults component will be routed after user hits the search button
-- /CongressHome route will display PressReleases component
-- /CongressHome route will have a NavCongress bar that will route to /senate or /house
 - /senate and /house routes will have a similar hierarchy:
   * a CongressStat component that renders the stats of the previous year, and an an OnClick function on the name of the politician that will lead to his ContactList component
-  * a FilterByStateForm component with a dropdown box where the user selects a specific state, a PoliticiansList component that shows all the politicians of each state, an OnClick function on the name of the politician that will lead to his ContactList
+  * a FilterByStateForm component, a PoliticiansList component that shows all the politicians of each state
 - Header and Footer Components
+- PressRelease component displays most recent press releases
 
 ### PostMVP
 
@@ -66,6 +64,8 @@ The site will have a directory of every senator and house member by state where 
 - a filter by next re-election function
 - a search for a specific bill function (needs a bill ID)
 - a specific roll-call vote function (needs bill ID)
+- a dropdown box where the user selects a specific state
+- an OnClick function on the name of the politician that will lead to his ContactList
 
 ## React Component Hierarchy
 
@@ -81,11 +81,9 @@ The site will have a directory of every senator and house member by state where 
 | Footer | This will render the header|
 | NavMain| This will render the nav bar in the header with links to /home /billsarchive and /congresshome|
 | CurrentBills | A list of current bills passed and the votes outcome will render at the homepage |
-| UpcomingBills | Renders a list of upcoming bills immediately when routed to /BillsArchive |
 | SearchBillsForm | Renders a form for the user to type in a keyword |
 | BillResults | Renders a list of bills that have the keyword searched |
 | PressReleases | Renders a list of the most current press releases |
-| NavCongress | Renders links to /senate and /house |
 | CongressStat | Renders the stats of the previous year |
 | ContactList | Renders contact info (phone, site, socials) |
 | FilterByStateForm | Renders a dropdown box for the user to choose a state |
@@ -93,45 +91,48 @@ The site will have a directory of every senator and house member by state where 
 
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Working with API | H | 2hrs| hrs | hrs |
-| Header/Footer component | H | 1hr | hrs | hrs |
-| NavMain | 1H | hrs| hrs | hrs |
-| CurrentBills | 1H | hrs| hrs | hrs |
-| UpcomingBills | 1H | hrs| hrs | hrs |
-| SearchBillsForm | 1.5H | hrs| hrs | hrs |
-| BillResults | 1H | hrs| hrs | hrs |
-| PressReleases | 1H | hrs| hrs | hrs |
-| NavCongress | 1H | hrs| hrs | hrs |
-| CongressStat | 2.5H | hrs| hrs | hrs |
-| ContactList | 1H | hrs| hrs | hrs |
-| FilterByStateForm | 2H | hrs| hrs | hrs |
-| PoliticiansList | 2H | hrs| hrs | hrs |
-| Styling | 6H | hrs| hrs | hrs |
-| Total | H | hrs| hrs | hrs |
+| Working with API | H | 2hrs| 2hrs | 2hrs |
+| Header/Footer component | H | 1hr | .5hrs | .5hrs |
+| NavMain | H | 1hrs| .5hrs | .5hrs |
+| CurrentBills | H | 1hrs| 1hr | 1hr |
+| SearchBillsForm | H | 1hrs| 1hrs | 1hrs |
+| BillResults | H | 1hrs| 1hrs | 1hrs |
+| PressReleases | H | 1hrs| .5hrs | .5hrs |
+| CongressStat | H | 2.5hrs| 2.5hrs | 2.5hrs |
+| ContactList | H | 1hrs| 1hrs | 2hrs |
+| FilterByStateForm | H | 2hrs| 2hrs | 2hrs |
+| PoliticiansList | H | 2hrs| 3hrs | 5hrs |
+| Styling | H | 6hrs| 10hrs | 12hrs |
+| Total | H | 21.5hrs| 24.5hrs | 30hrs |
 
-## Helper Functions
-Helper functions should be generic enought that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
-
-| Function | Description |
-| --- | :---: |  
-| Capitalize | This will capitalize the first letter in a string of text |
-
-## Additional Libraries
- Use this section to list all supporting libraries and thier role in the project.
 
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
+- The code below will render a red box if the politician is a republican, or a blue box if they are democrat.
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+<div className="partybox"
+style={{ backgroundColor: x.party==="R" ? "#ee252c" : "#123cf4" }} />
+```
+
+- The code below renders a prop if that data is available, or returns nothing if the API does not provide it.  It is done for a phone number, twitter account, facebook account, website, and contact page.  The user can also click on the link and it will redirect them to that link.
+
+```
+<div className="contact">
+  {x.roles[0].phone === null ? null :
+    (<div>phone: <span>{x.roles[0].phone}</span></div>)}
+  {x.twitter_account === null ? null :
+    (<div>twitter: <span><a className="links" href={"https://twitter.com/"+x.twitter_account} target="_blank" rel="noopener noreferrer">{x.twitter_account}</a></span></div>)}
+  {x.facebook_account === null ? null :
+    (<div>facebook: <span><a className="links" href={"https://facebook.com/"+x.facebook_account} target="_blank" rel="noopener noreferrer">{x.facebook_account}</a></span></div>)}
+  {x.url === null ? null :
+    (<div>website: <span><a className="links" href={x.url} target="_blank" rel="noopener noreferrer">{x.url}</a></span></div>)}
+  {x.roles[0].contact_form === null ? null :
+    (<div>contact: <span><a className="links" href={x.roles[0].contact_form} target="_blank" rel="noopener noreferrer">{x.roles[0].contact_form}</a></span></div>)}
+</div>
 ```
 
 ## Issues and Resolutions
- Use this section to list of all major issues encountered and their resolution.
 
-#### SAMPLE.....
-**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
-**RESOLUTION**: Missing comma after first object in sources {} object
+**ERROR**: all the forms are linked together.  So if you are in the archives component and search for a keyword, the forms in the senate and house of reps component will also search for that keyword and error out.                               
+**RESOLUTION**: creating different handle submits for each form.
