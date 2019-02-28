@@ -1,13 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Alfa+Slab+One|Anton|Cinzel|Fjalla+One|Playfair+Display|Roboto');
 
 
-html, body {
- text-align: center;
- height: 100%;
- position: relative;
+html {
+  text-align: center;
+
 }
-
-
 
 header {
   background-color: black;
@@ -47,28 +44,17 @@ a:hover {
   color: blue;
 }
 
-.App{
- min-height: 100vh;
- overflow: hidden;
- display: block;
- position: relative;
- padding-bottom: 75px;
-}
-
-
-footer {
-  position: absolute;
-  bottom: 0;
-  width:100%;
+footer{
   background-color: grey;
   height: 75px;
   line-height: 75px;
+  margin-top: 30px;
   font-family: 'Roboto', sans-serif;
 }
 
 main {
   background-color: white;
-  margin-bottom: 30px;
+
 }
 
 h2{
@@ -190,6 +176,7 @@ h2{
 }
 
 .search-politician{
+  /* width: 340px; */
   position: sticky;
   top: 5px;
   height: 0;
@@ -441,10 +428,6 @@ strong{
 
   .presslink{
     font-size: 8px;
-  }
-
-  .App{
-    padding-bottom: 0px;
   }
 
 }
