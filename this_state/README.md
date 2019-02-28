@@ -1,4 +1,6 @@
-# ![Logo](https://i.imgur.com/Pd7LMDn.png) [This.State](http://this.state.surge.sh/)
+# ![Logo](https://i.imgur.com/8JQXdo2.png)
+
+[This.State](http://this.state.surge.sh/)
 
 
 ## Project Description
