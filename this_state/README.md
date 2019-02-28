@@ -155,4 +155,6 @@ style={{ backgroundColor: x.party==="R" ? "#ee252c" : "#123cf4" }} />
     <DisplayByState {...props}
     submitSpecificSenator = {this.submitSpecificHouse}
     value={props.id}/>
-    ```
+
+
+  ```
