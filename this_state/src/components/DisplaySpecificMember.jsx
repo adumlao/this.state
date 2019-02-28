@@ -2,7 +2,9 @@ import React from 'react'
 
 const DisplaySpecificMember = (props) => {
   return(
-    <div className="main">
+    <div>
+    {props.names === undefined ? null :
+      (<div className="main">
       {props.names.map(x=> (
       <div
       className="specific-block"
@@ -13,6 +15,7 @@ const DisplaySpecificMember = (props) => {
           style={{ backgroundColor: x.current_party==="R" ? "#ee252c" : "#123cf4" }} />
         </div>
         <div className="contact">
+          <div className="bio-state">{x.roles[0].chamber}, {x.roles[0].state}, {x.current_party}</div>
           {x.roles[0].phone === null ? null :
             (<div>phone: <span>{x.roles[0].phone}</span></div>)}
           {x.twitter_account === null ? null :
@@ -30,9 +33,11 @@ const DisplaySpecificMember = (props) => {
           <strong>{x.roles[0].missed_votes_pct}</strong>
           <div>Votes with party percentage:</div>
           <strong>{x.roles[0].votes_with_party_pct}</strong>
+          <div>Term Ends: {x.roles[0].end_date}</div>
         </div>
       </div>
       ))}
+    </div>)}
     </div>
   );
 }
