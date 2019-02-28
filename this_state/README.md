@@ -138,3 +138,19 @@ style={{ backgroundColor: x.party==="R" ? "#ee252c" : "#123cf4" }} />
 
 **ERROR**: all the forms are linked together.  So if you are in the archives component and search for a keyword, the forms in the senate and house of reps component will also search for that keyword and error out.                               
 **RESOLUTION**: creating different handle submits for each form.
+
+**ERROR**: button click on representative id triggers an api call but does not recognize the value of the ID.                     
+**RESOLUTION**: pass props back to the parent using the spread operator and link the value to the target event.
+
+```   async submitSpecificSenator(ev){
+      ev.preventDefault();
+      const specificSenator = await fetchSpecificMember(ev.target.value)
+
+      this.setState({
+      specificSenator: specificSenator
+      })
+    }
+
+    <DisplayByState {...props}
+    submitSpecificSenator = {this.submitSpecificHouse}
+    value={props.id}/>```
