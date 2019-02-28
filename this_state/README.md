@@ -1,4 +1,4 @@
-# ![Logo]('./public/icon.png') [This.State](http://this.state.surge.sh/)
+# ![Logo](https://i.imgur.com/Pd7LMDn.png) [This.State](http://this.state.surge.sh/)
 
 
 ## Project Description
