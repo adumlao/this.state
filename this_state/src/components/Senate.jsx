@@ -17,8 +17,13 @@ const Senate = (props) => {
           <div className="bio">
           <div className="bio-state">
             <div>{x.state}, {x.party}</div>
-            <div className="id">{x.id}</div>
           </div>
+            <div>Rep ID: <input
+              onClick={props.submitSpecificSenator}
+              type="submit"
+              value={x.id}
+            />
+            </div>
           <div>Missed Votes: {x.missed_votes} / Total: {x.total_votes}</div>
           <div>Pct: {x.missed_votes_pct}</div>
           <div>Votes with party: {x.votes_with_party_pct}</div>
