@@ -12,7 +12,7 @@ const Nav = () => {
       <Link to="/PressRelease">Press Releases</Link>
      </nav>
     </div>
-  )
+  );
 }
 
 export default Nav;

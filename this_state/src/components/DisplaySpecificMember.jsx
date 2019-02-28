@@ -3,7 +3,7 @@ import React from 'react'
 const DisplaySpecificMember = (props) => {
   return(
     <div className="main">
-    {props.names.map(x=> (
+      {props.names.map(x=> (
       <div
       className="specific-block"
       key={x.id}>
@@ -28,12 +28,13 @@ const DisplaySpecificMember = (props) => {
           <div>2019 Scorecard</div>
           <div>Missed Votes Percentage:</div>
           <strong>{x.roles[0].missed_votes_pct}</strong>
-          <div>Votes with party percentage:</div> <strong>{x.roles[0].votes_with_party_pct}</strong>
+          <div>Votes with party percentage:</div>
+          <strong>{x.roles[0].votes_with_party_pct}</strong>
         </div>
       </div>
-    ))}
+      ))}
     </div>
-  )
+  );
 }
 
 export default DisplaySpecificMember;

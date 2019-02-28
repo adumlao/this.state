@@ -5,7 +5,7 @@ const Bills = (props) => {
       <div>
       <h2>Bills Archive</h2>
       </div>
-    )
+    );
 }
 
 export default Bills;

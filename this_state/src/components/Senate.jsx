@@ -1,11 +1,11 @@
 import React from 'react';
 
 const Senate = (props) => {
-    return(
-      <div>
+  return(
+    <div>
       <h2 className="congress-header">2018 Senate Scorecard</h2>
       <div className="reps">
-      {props.names.map(x=> (
+        {props.names.map(x=> (
         <div
         className="politician-block"
         key={x.id}>
@@ -15,24 +15,25 @@ const Senate = (props) => {
             style={{ backgroundColor: x.party==="R" ? "#ee252c" : "#123cf4" }} />
           </div>
           <div className="bio">
-          <div className="bio-state">
-            <div>{x.state}, {x.party}</div>
-          </div>
-            <div>Rep ID: <input
+            <div className="bio-state">
+              <div>{x.state}, {x.party}</div>
+            </div>
+            <div>Rep ID:
+              <input
               onClick={props.submitSpecificSenator}
               type="submit"
               value={x.id}
-            />
+              />
             </div>
-          <div>Missed Votes: {x.missed_votes} / Total: {x.total_votes}</div>
-          <div>Pct: {x.missed_votes_pct}</div>
-          <div>Votes with party: {x.votes_with_party_pct}</div>
+            <div>Missed Votes: {x.missed_votes} / Total: {x.total_votes}</div>
+            <div>Pct: {x.missed_votes_pct}</div>
+            <div>Votes with party: {x.votes_with_party_pct}</div>
           </div>
         </div>
-      ))}
+        ))}
+      </div>
     </div>
-    </div>
-    )
+  );
 }
 
 export default Senate;

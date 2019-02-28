@@ -56,7 +56,7 @@ class App extends Component {
 
   handleChange(event) {
       this.setState({value: event.target.value});
-    }
+  }
 
   async componentDidMount() {
     const displayVote = await fetchVote()
@@ -69,7 +69,7 @@ class App extends Component {
       senator: displaySenator,
       houseRep: displayHouseRep,
       press: press
-    })
+    });
   }
 
   async handleSubmit(ev) {
@@ -78,8 +78,8 @@ class App extends Component {
 
     this.setState({
       keyword : keyword,
-    })
-  };
+    });
+  }
 
   async submitState(ev) {
     ev.preventDefault();
@@ -87,7 +87,7 @@ class App extends Component {
 
     this.setState({
       senatorByState: senatorByState
-    })
+    });
   }
 
   async submitHouse(ev) {
@@ -96,7 +96,7 @@ class App extends Component {
 
     this.setState({
       houseRepByState: houseRepByState
-    })
+    });
   }
 
   async submitSpecificSenator(ev){
@@ -105,7 +105,7 @@ class App extends Component {
 
     this.setState({
       specificSenator: specificSenator
-    })
+    });
   }
 
   async submitSpecificHouse(ev){
@@ -114,7 +114,7 @@ class App extends Component {
 
     this.setState({
       specificHouse: specificHouse
-    })
+    });
   }
 
   render() {

@@ -12,45 +12,44 @@ const api = axios.create({
 });
 
 const fetchVote = async () => {
-  const resp = await api('/house/votes/recent.json')
+  const resp = await api('/house/votes/recent.json');
   return resp.data.results.votes;
 }
 
 
 const fetchBill = async (keyword) => {
-  const resp = await api(`/bills/search.json?query='${keyword}'`)
-  return resp.data.results[0].bills
+  const resp = await api(`/bills/search.json?query='${keyword}'`);
+  return resp.data.results[0].bills;
 }
 
 const fetchSenator = async () => {
-  const resp = await api(`/115/senate/members.json`)
+  const resp = await api(`/115/senate/members.json`);
   return resp.data.results[0].members;
 }
 
 const fetchHouseRep = async () => {
-  const resp = await api(`/115/house/members.json`)
+  const resp = await api(`/115/house/members.json`);
   return resp.data.results[0].members;
 }
 
 const pressRelease = async () => {
-  const resp = await api(`/statements/latest.json`)
+  const resp = await api(`/statements/latest.json`);
   return resp.data.results;
 }
 
 const fetchSenatorbyState = async (state) => {
-  const resp = await api(`/members/senate/${state}/current.json`)
+  const resp = await api(`/members/senate/${state}/current.json`);
   return resp.data.results;
 }
 
 const fetchHouseRepbyState = async (state) => {
-  const resp = await api(`/members/house/${state}/current.json`)
+  const resp = await api(`/members/house/${state}/current.json`);
   return resp.data.results;
 }
 
 const fetchSpecificMember = async (id) => {
-  const resp = await api(`members/${id}.json`)
+  const resp = await api(`members/${id}.json`);
   return resp.data.results;
-
 }
 
 export{
