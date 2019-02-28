@@ -101,7 +101,7 @@ class App extends Component {
 
   async submitSpecificSenator(ev){
     ev.preventDefault();
-    const specificSenator = await fetchSpecificMember(this.state.value)
+    const specificSenator = await fetchSpecificMember(ev.target.value)
 
     this.setState({
       specificSenator: specificSenator
@@ -110,7 +110,7 @@ class App extends Component {
 
   async submitSpecificHouse(ev){
     ev.preventDefault();
-    const specificHouse = await fetchSpecificMember(this.state.value)
+    const specificHouse = await fetchSpecificMember(ev.target.value)
 
     this.setState({
       specificHouse: specificHouse
@@ -144,7 +144,7 @@ class App extends Component {
            </div>
          )}/>
 
-         <Route path ="/Senate" render={() => (
+         <Route path ="/Senate" render={(props) => (
             <div className="politician">
 
             <div className="search-politician">
@@ -163,14 +163,21 @@ class App extends Component {
             </div>
 
             <div className="scorecard">
-              <DisplayByState className="display-by-state" names={this.state.senatorByState}/>
-              <Senate names={this.state.senator}/>
+              <DisplayByState {...props}
+              className="display-by-state"
+              names={this.state.senatorByState}
+              submitSpecificSenator = {this.submitSpecificSenator}
+              value={props.id}/>
+              <Senate
+              names={this.state.senator}
+              submitSpecificSenator = {this.submitSpecificSenator}
+              value={props.id}/>
             </div>
 
             </div>
          )}/>
 
-         <Route path ="/House" render={() => (
+         <Route path ="/House" render={(props) => (
            <div className="politician">
 
            <div className="search-politician">
@@ -189,8 +196,15 @@ class App extends Component {
            </div>
 
            <div className="scorecard">
-            <DisplayByState className="display-by-state" names={this.state.houseRepByState}/>
-            <House names={this.state.houseRep}/>
+            <DisplayByState {...props}
+            className="display-by-state"
+            names={this.state.houseRepByState}
+            submitSpecificSenator = {this.submitSpecificHouse}
+            value={props.id}/>
+            <House
+            names={this.state.houseRep}
+            submitSpecificSenator = {this.submitSpecificHouse}
+            value={props.id}/>
            </div>
 
             </div>

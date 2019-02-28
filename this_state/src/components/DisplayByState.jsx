@@ -1,27 +1,38 @@
-import React from 'react'
+import React from 'react';
 
-const DisplayByState = (props) => {
-  return(
-    <div div className="reps">
-    {props.names.map(x=> (
-      <div
-      className="politician-block"
-      key={x.id}>
-        <div className="block-header">2019 Congress Member</div>
-        <div className="state-search">
-          <div>{x.last_name}, {x.first_name}</div>
-          <div className="partybox-search"
-          style={{ backgroundColor: x.party==="R" ? "#ee252c" : "#123cf4" }} />
+const Senate = (props) => {
+    return(
+      <div>
+      <h2 className="congress-header">2018 Senate Scorecard</h2>
+      <div className="reps">
+      {props.names.map(x=> (
+        <div
+        className="politician-block"
+        key={x.id}>
+          <div className="name">
+            <div>{x.last_name}, {x.first_name}</div>
+            <div className="partybox"
+            style={{ backgroundColor: x.party==="R" ? "#ee252c" : "#123cf4" }} />
+          </div>
+          <div className="bio">
+          <div className="bio-state">
+            <div>{x.state}, {x.party}</div>
+          </div>
+            <div>Rep ID: <input
+              onClick={props.submitSpecificSenator}
+              type="submit"
+              value={x.id}
+            />
+            </div>
+          <div>Missed Votes: {x.missed_votes} / Total: {x.total_votes}</div>
+          <div>Pct: {x.missed_votes_pct}</div>
+          <div>Votes with party: {x.votes_with_party_pct}</div>
+          </div>
         </div>
-        <div className="bio">
-          <div>{x.party}</div>
-          <div>Rep ID: <span className="id">{x.id}</span></div>
-          <div>Next election: {x.next_election}</div>
-        </div>
-      </div>
-    ))}
+      ))}
     </div>
-  )
+    </div>
+    )
 }
 
-export default DisplayByState;
+export default Senate;
