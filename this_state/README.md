@@ -144,7 +144,7 @@ style={{ backgroundColor: x.party==="R" ? "#ee252c" : "#123cf4" }} />
 **RESOLUTION**: creating different handle submits for each form.
 
 **ERROR**: button click on representative id triggers an api call but does not recognize the value of the ID.                     
-**RESOLUTION**: pass props back to the parent using the spread operator and link the value to the target event.
+**RESOLUTION**: pass the value of the button on click as the parameter of the api call.
 
 ```   
       async submitSpecificSenator(ev){
@@ -155,10 +155,5 @@ style={{ backgroundColor: x.party==="R" ? "#ee252c" : "#123cf4" }} />
       specificSenator: specificSenator
       })
     }
-
-    <DisplayByState {...props}
-    submitSpecificSenator = {this.submitSpecificHouse}
-    value={props.id}/>
-
 
   ```

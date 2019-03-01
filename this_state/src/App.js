@@ -164,7 +164,7 @@ class App extends Component {
            </div>
          )}/>
 
-         <Route path ="/Senate" render={(props) => (
+         <Route path ="/Senate" render={() => (
             <div className="politician">
 
             <div className="search-politician">
@@ -183,21 +183,21 @@ class App extends Component {
             </div>
 
             <div className="scorecard">
-              <DisplayByState {...props}
+              <DisplayByState
               className="display-by-state"
               names={this.state.senatorByState}
               submitSpecificSenator = {this.submitSpecificSenator}
-              value={props.id}/>
+              />
               <Senate
               names={this.state.senator}
               submitSpecificSenator = {this.submitSpecificSenator}
-              value={props.id}/>
+              />
             </div>
 
             </div>
          )}/>
 
-         <Route path ="/House" render={(props) => (
+         <Route path ="/House" render={() => (
            <div className="politician">
 
            <div className="search-politician">
@@ -216,15 +216,15 @@ class App extends Component {
            </div>
 
            <div className="scorecard">
-            <DisplayByState {...props}
+            <DisplayByState
             className="display-by-state"
             names={this.state.houseRepByState}
             submitSpecificSenator = {this.submitSpecificHouse}
-            value={props.id}/>
+            />
             <House
             names={this.state.houseRep}
             submitSpecificSenator = {this.submitSpecificHouse}
-            value={props.id}/>
+            />
            </div>
 
             </div>
